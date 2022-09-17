@@ -1,11 +1,19 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+    <h1>Welcome to my movie Listin site!</h1>
+    <p>Check list created by users and fin a movie for tonight date</p>
+  </div>
+</div>
 <div class="container">
-  <p><%= link_to '<i class="fa-solid fa-circle-plus"></i> Create a new List'.html_safe, new_list_path, :class => "btn btn-primary m-2 shadow" %> </p>
-  <ul class="row">
+  <div class="d-flex justify-content-left">
+    <div class=""><%= link_to '<i class="fa-solid fa-circle-plus"></i> Create a new List'.html_safe, new_list_path, :class => "btn btn-primary m-2 shadow" %> </div>
+  </div>
+  <ul class="cards">
     <% @lists.each do |element| %>
-          <li class="col-4 list-group-item d-flex justify-content-between align-items-center shadow">
-            <p class="ml-3 my-auto ">
-              <%= link_to element.name, list_path(element) %>
-            </p>
+          <li class="col list-group-item d-flex align-items-center p-2">
+            <div class="my-auto w-100 ">
+              <%= link_to element.name, list_path(element), style: "background-image: url('https://picsum.photos/400/600')", class: "card-category" %>
+            </div>
           </li>
     <% end %>
   </ul>
