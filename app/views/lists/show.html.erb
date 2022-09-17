@@ -10,13 +10,17 @@
     <ul class="cards">
       <% @list.bookmarks.all.each do |element| %>
         <div class="card-trip">
-            <li class="col-4 list-group-item">
+            <li class="list-group-item">
                 <img src="https://picsum.photos/400/300" />
-              <div class="">
-                <div class="card-trip-infos">
+              <div class="col-12">
+                <div class="d-flex justify-content-between px-4 py-2">
                   <h2><%= element.movie.title %></h2>
+                  <p><%= element.movie.rating %></p>
+                </div>
+                <div class="d-flex justify-content-between p-4 py-2">
                   <p><%= element.comment %></p>
-                  <h2 class="card-trip-pricing"><%= element.movie.rating %></h2>
+                  <%= link_to '<i class="fa fa-trash"></i>'.html_safe, list_bookmark_path(@list),
+                    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn btn-danger card-delete m-3" %>
                 </div>
               </div>
             </li>
