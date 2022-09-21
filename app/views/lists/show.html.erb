@@ -1,6 +1,7 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
   <div class="container">
     <h1><%= @list.name %></h1>
+    <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
     <p>Check this list movies</p>
   </div>
 </div>

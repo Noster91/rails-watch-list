@@ -2,6 +2,7 @@
   <div class="col-sm-6 mx-auto">
     <%= simple_form_for(@list) do |f| %>
       <%= f.input :name %>
+      <%= f.input :photo, as: :file %>
       <%= f.submit 'Add List', class: "btn btn-primary"%>
     <% end %>
   </div>
