@@ -12,7 +12,7 @@
     <% @lists.each do |element| %>
           <li class="col list-group-item d-flex align-items-center p-2">
             <div class="my-auto w-100 ">
-              <%= link_to element.name, list_path(element), style: "background-image: url('https://picsum.photos/400/600')", class: "card-category" %>
+              <%= link_to element.name, list_path(element), style: "background-image: url('#{ cl_image_path element.photo.key, height: 300, crop: :fill }')", class: "card-category" %>
             </div>
           </li>
     <% end %>
